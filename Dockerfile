@@ -27,5 +27,15 @@ RUN apt-get install -y python3-venv
 RUN apt-get install -y python3-pip
 RUN pip3 install awscli
 
+# Install git.
+RUN apt-get install -y git
+
+# Install make.
+RUN apt-get install -y build-essential
+
+# Setup workdirectory.
+RUN mkdir /app
+WORKDIR /app
+
 # Run commands.
 CMD [ "exec", "\"@\"" ]

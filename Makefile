@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 
-.PHONY: version check setup start
+.PHONY: version check setup run start
 
 export AWS_PROFILE ?= ying.wang
 export APP_VERSION ?= $(shell git rev-parse --short HEAD)
@@ -45,9 +45,22 @@ setup:
 		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
 		hugo mod get -u
 
-start:
+# From: https://stackoverflow.com/a/14061796
+# If the first argument is "run"...
+ifeq (run,$(firstword $(MAKECMDGOALS)))
+  # use the rest as arguments for "run"
+  RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+  # ...and turn them into do-nothing targets
+  $(eval $(RUN_ARGS):;@:)
+endif
+
+# Lifts command into `docker run` context.
+run:
 	docker run \
 		-v $(GIT_REPO_ROOT):/app \
 		--net=host \
 		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
-		hugo server -p $(HUGO_PORT)
+		$(RUN_ARGS)
+
+start:
+	$(MAKE) run "hugo server -p $(HUGO_PORT)"

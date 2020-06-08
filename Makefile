@@ -100,4 +100,4 @@ export S3_BUCKET_URI ?= docs.tinydevcrm.com
 deploy-content:
 	rm -rf ./public
 	hugo --verbose
-	aws s3 sync ./build s3://$(S3_BUCKET_URI) --profile tinydevcrm-user
+	aws s3 sync ./public s3://$(S3_BUCKET_URI) --profile tinydevcrm-user

@@ -1,0 +1,31 @@
+FROM debian:buster-20200514
+LABEL maintainer="me@yingw787.com"
+
+# Set build arguments.
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Get package lists, important for getting 'curl' and such.
+RUN apt-get -y update
+
+# Install build dependencies.
+RUN apt-get install -y curl
+
+# Install golang.
+RUN curl https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz -o /tmp/go1.14.4.linux-amd64.tar.gz
+RUN tar -C /usr/local -xvzf /tmp/go1.14.4.linux-amd64.tar.gz
+ENV PATH=$PATH:/usr/local/go/bin
+
+# Install hugo.
+#
+# Use '-L' to follow redirects from GitHub releases.
+RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.62.0/hugo_0.62.0_Linux-64bit.deb -o /tmp/hugo_0.62.0_Linux-64bit.deb
+RUN dpkg -i /tmp/hugo_0.62.0_Linux-64bit.deb
+
+# Install awscli.
+RUN apt-get install -y python3-dev
+RUN apt-get install -y python3-venv
+RUN apt-get install -y python3-pip
+RUN pip3 install awscli
+
+# Run commands.
+CMD [ "exec", "\"@\"" ]

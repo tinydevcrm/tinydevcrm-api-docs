@@ -38,9 +38,5 @@ RUN apt-get install -y build-essential
 RUN mkdir /app
 WORKDIR /app
 
-# Setup themes.
-RUN git submodule add https://github.com/bep/docuapi $(WORKDIR)/themes/docuapi
-RUN hugo mod get -u
-
 # Run commands.
 CMD [ "exec", "\"@\"" ]

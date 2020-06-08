@@ -7,7 +7,6 @@ export APP_VERSION ?= $(shell git rev-parse --short HEAD)
 export GIT_REPO_ROOT ?= $(shell git rev-parse --show-toplevel)
 
 export DOCKER_IMAGE_NAME ?= tinydevcrm-api-docs
-export DOCKER_IMAGE_TAG ?= latest
 export HUGO_PORT ?= 36948
 
 version:
@@ -33,12 +32,22 @@ check:
 setup:
 	docker build \
 		--file $(GIT_REPO_ROOT)/Dockerfile \
-		--tag $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG) \
+		--tag $(DOCKER_IMAGE_NAME):$(APP_VERSION) \
 		$(GIT_REPO_ROOT)
+	docker run \
+		-v $(GIT_REPO_ROOT):/app \
+		--net=host \
+		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
+		git clone https://github.com/bep/docuapi /app/themes/docuapi || true
+	docker run \
+		-v $(GIT_REPO_ROOT):/app \
+		--net=host \
+		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
+		hugo mod get -u
 
 start:
 	docker run \
 		-v $(GIT_REPO_ROOT):/app \
 		--net=host \
-		$(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG) \
+		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
 		hugo server -p $(HUGO_PORT)

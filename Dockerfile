@@ -38,5 +38,12 @@ RUN apt-get install -y build-essential
 RUN mkdir /app
 WORKDIR /app
 
+# Set AWS_PROFILE; this should match AWS_PROFILE in 'Makefile'.
+#
+# NOTE: For this to work properly with MFA-authenticated IAM users, you must set
+# AWS_SESSION_TOKEN env variable; passing inline env variables may not work
+# properly with lifting arguments into Docker context.
+ENV AWS_PROFILE=tinydevcrm-user
+
 # Run commands.
 CMD [ "exec", "\"@\"" ]

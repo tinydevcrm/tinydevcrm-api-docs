@@ -15,7 +15,8 @@ RUN curl https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz -o /tmp/go1.14.4.l
 RUN tar -C /usr/local -xvzf /tmp/go1.14.4.linux-amd64.tar.gz
 ENV PATH=$PATH:/usr/local/go/bin
 
-# Install hugo.
+# Install hugo. It's important to lock down the version of `hugo` since it's
+# still a development version with breaking changes.
 #
 # Use '-L' to follow redirects from GitHub releases.
 RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.62.0/hugo_0.62.0_Linux-64bit.deb -o /tmp/hugo_0.62.0_Linux-64bit.deb
@@ -36,6 +37,10 @@ RUN apt-get install -y build-essential
 # Setup workdirectory.
 RUN mkdir /app
 WORKDIR /app
+
+# Setup themes.
+RUN git submodule add https://github.com/bep/docuapi $(WORKDIR)/themes/docuapi
+RUN hugo mod get -u
 
 # Run commands.
 CMD [ "exec", "\"@\"" ]

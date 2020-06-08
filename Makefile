@@ -7,7 +7,7 @@ export APP_VERSION ?= $(shell git rev-parse --short HEAD)
 export GIT_REPO_ROOT ?= $(shell git rev-parse --show-toplevel)
 
 export DOCKER_IMAGE_NAME ?= tinydevcrm-api-docs
-export HUGO_PORT ?= 36948
+export HUGO_PORT ?= 1320
 
 version:
 	@echo '{"Version": "$(APP_VERSION)"}'

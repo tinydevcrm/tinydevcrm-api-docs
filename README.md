@@ -1,5 +1,11 @@
 # `tinydevcrm-api-docs`: API documentation for TinyDevCRM
 
+This repository should specify how the API `api.tinydevcrm.com`, as per the
+[GitHub repository](https://github.com/tinydevcrm/tinydevcrm-backend) works.
+
+This framework uses `hugo` and the `hugo` theme `docuapi` static website
+generation and UI/UX.
+
 ## Getting Started
 
 1.  Clone this repository, and `cd` into it:

@@ -78,8 +78,8 @@ create-infra:
 	# Default is generated from `tinydevcrm-backend`.
 	aws cloudformation create-stack \
 		--stack-name $(AWS_STACK_NAME) \
-		--template-body file://infra-aws/stack.yaml \
-		--parameters file://infra-aws/stack-params.json \
+		--template-body file://stack.yaml \
+		--parameters file://stack-params.json \
 		--capabilities CAPABILITY_NAMED_IAM \
 		--profile tinydevcrm-user
 

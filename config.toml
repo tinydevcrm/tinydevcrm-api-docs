@@ -1,12 +1,7 @@
-# baseURL = "http://example.org/"
-# languageCode = "en-us"
-# title = "My New Hugo Site"
-
 theme = "docuapi"
-# themesdir = "themes/docuapi"
 languageCode = "en-us"
-baseurl = "https://docuapi.netlify.com/"
-title = "DocuAPI Example Site"
+baseurl = "https://docs.tinydevcrm.com"
+title = "TinyDevCRM API Documentation"
 
 disableKinds = ["taxonomyTerm"]
 
@@ -31,24 +26,12 @@ defaultContentLanguage = "en"
 path="github.com/bep/empty-hugo-module"
 
 [params]
-search = true
+search = false
 
 # Configure the language example tabs.
 [[params.language_tabs]]
-key = "go"
-name = "Go"
-[[params.language_tabs]]
 key = "shell"
 name = "Shell"
-[[params.language_tabs]]
-key = "ruby"
-name = "Ruby"
-[[params.language_tabs]]
-key = "python"
-name = "Python"
-[[params.language_tabs]]
-key = "javascript"
-name = "Javascript"
 
 #Languages
 [languages]
@@ -60,28 +43,8 @@ title = "DocuAPI Example Site"
 
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [
-"<a href='#'>Sign Up for a Developer Key</a>",
-"Documentation Powered by [DocuAPI](https://github.com/bep/docuapi)",
-"Hugo Theme by [bep](https://github.com/bep)"
+"[Homepage](https://tinydevcrm.com)",
 ]
 [languages.en.blackfriday]
 angledQuotes = false
-hrefTargetBlank = true
-
-
-[languages.nn]
-languageName = "Nynorsk"
-weight = 1
-title = "DocuAPI-døme"
-
-# Left sidebar footer items. Use HTMl or Markdown.
-toc_footers = [
-"<a href='#'>Registrer deg for ein utviklarnøkkel</a>",
-"Dokumentasjonen er driven av [DocuAPI](https://github.com/bep/docuapi)",
-"Hugo Theme av [bep](https://github.com/bep)"
-]
-
-[languages.nn.blackfriday]
-# Norwegian uses angled quotes
-angledQuotes = true
 hrefTargetBlank = true

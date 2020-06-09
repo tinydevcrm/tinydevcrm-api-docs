@@ -9,6 +9,9 @@ export GIT_REPO_ROOT ?= $(shell git rev-parse --show-toplevel)
 export DOCKER_IMAGE_NAME ?= tinydevcrm-api-docs
 export HUGO_PORT ?= 1320
 
+export USERID ?= $(shell id -u $(whoami))
+export GROUPID ?= $(shell id -g $(whoami))
+
 version:
 	@echo '{"Version": "$(APP_VERSION)"}'
 
@@ -39,11 +42,13 @@ setup:
 	docker run \
 		-v $(GIT_REPO_ROOT):/app \
 		--net=host \
+		-u $(USERID):$(GROUPID) \
 		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
 		git clone https://github.com/bep/docuapi /app/themes/docuapi || true
 	docker run \
 		-v $(GIT_REPO_ROOT):/app \
 		--net=host \
+		-u $(USERID):$(GROUPID) \
 		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
 		hugo mod get -u
 
@@ -62,10 +67,11 @@ run:
 		-v $(GIT_REPO_ROOT):/app \
 		-v ~/.aws:/root/.aws \
 		--net=host \
+		-u $(USERID):$(GROUPID) \
 		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
 		$(RUN_ARGS)
 
-start:
+start: setup
 	$(MAKE) run "hugo server -p $(HUGO_PORT)"
 
 export AWS_STACK_NAME ?= tinydevcrm-api-docs

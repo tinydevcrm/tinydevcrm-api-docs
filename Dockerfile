@@ -38,6 +38,12 @@ RUN apt-get install -y build-essential
 RUN mkdir /app
 WORKDIR /app
 
+# Setup permissions.
+RUN chown -R 1000:1000 /app
+
+RUN mkdir /.cache
+RUN chown -R 1000:1000 /.cache
+
 # Set AWS_PROFILE; this should match AWS_PROFILE in 'Makefile'.
 #
 # NOTE: For this to work properly with MFA-authenticated IAM users, you must set

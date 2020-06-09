@@ -7,15 +7,17 @@ weight: 17
 
 Let's take our digital contacts management data and import it into TinyDevCRM.
 For data integrity reasons, TinyDevCRM supports [Apache
-Parquet](https://parquet.apache.org/); a more streamlined means of data upload
-will be added in a future TinyDevCRM release.
+Parquet](https://parquet.apache.org/).
+
+A more streamlined means of data upload will be added in a future TinyDevCRM
+release.
 
 > If we converted it into a CSV file, it may look something like this:
 
 ```shell
 $ cat /path/to/file.csv
 
-First Name,Last Name,Relation,Date,Notify,Note
+FirstName,LastName,Relation,Date,Notify,Note
 Melanie,Barron,Friend,1979-05-03,ANNUALLY,Birthday
 Cynthia,Ward,Coworker @ Company X,2009-07-01,ANNUALLY,Work Anniversary
 Mary,Gil,Coworker @ Company Y,1993-01-16,ANNUALLY,Annual Happy Hour

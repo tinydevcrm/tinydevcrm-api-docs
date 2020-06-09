@@ -5,15 +5,13 @@ title: API Reference
 
 # Introduction
 
-Welcome to the TinyDevCRM API! You can use our API to create PostgreSQL tables,
-create PostgreSQL materialized views, refresh materialized views using a cron
-job, and stream materialized view refresh events via HTTP/2 and Server-Sent
-Events.
+Welcome to the TinyDevCRM API! TinyDevCRM serves as your data layer for
+lightweight, event-driven clients.
 
-Since this API is defined using HTTP, no SDK is necessary, and your language's
-HTTP library should be able to communicate with this API! You can view code
-examples in the dark area to the right, and you can switch the programming
-language of the examples with the tabs in the top right.
+Since this API is defined using HTTP, no SDK is necessary! Your favorite
+language's HTTP library should be able to communicate with this API, no problem.
+You can view code examples in the dark area to the right, and you can switch the
+programming language of the examples with the tabs in the top right.
 
 All project code is open-source, and can be viewed in [this GitHub organization
 page](https://github.com/tinydevcrm).

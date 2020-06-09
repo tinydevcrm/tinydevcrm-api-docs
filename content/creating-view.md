@@ -3,9 +3,9 @@ title: "Creating View"
 weight: 20
 ---
 
-## Creating the Materialized View
+## Creating a Materialized View
 
-> To create the view:
+> To create a view:
 
 ```shell
 curl \
@@ -25,4 +25,10 @@ CREATE MATERIALIZED VIEW "sample_view" AS
     date_part('day', "Date") = date_part('day', CURRENT_DATE) AND
     "Notify" = 'ANNUALLY'
 WITH DATA;
+```
+
+> This should result in a successful `HTTP 201 Created` response:
+
+```shell
+{"id":$VIEW_ID,"view_name":"sample_view","user":$USER_ID}
 ```

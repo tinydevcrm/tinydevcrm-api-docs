@@ -15,7 +15,7 @@ curl \
     https://api.tinydevcrm.com/auth/tokens/refresh/
 ```
 
-> You should get an HTTP response like this:
+> Response:
 
 ```shell
 {"access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkxNzIyNDA5LCJqdGkiOiJhZjcxZTRjYmQxMjU0N2M2YjA2NGYzNWJkYjUwZGIyMyIsInVzZXJfaWQiOjF9.hPsU9jj8zimIkB3LBiMuzcGDNgHQFJ5DS6oK61Oc6E0","refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU5MjkzMTcwOSwianRpIjoiNzJlNGZkOGE0NWIxNDRmYWEzOGQ0NTU0OTY0NjQwMzciLCJ1c2VyX2lkIjoxfQ.7lWBJTX9cAmEZMJx0XsLMkf4VDcpHIGeSoLy7UuHyck"}

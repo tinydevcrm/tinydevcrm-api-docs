@@ -5,7 +5,7 @@ weight: 14
 
 ## Obtain a JSON Web Token
 
-> Obtain a JSON Web Token
+> Obtain a JSON Web Token:
 
 ```shell
 curl \
@@ -15,7 +15,7 @@ curl \
     https://api.tinydevcrm.com/auth/tokens/obtain/
 ```
 
-> You should get an HTTP response like this:
+> Response:
 
 ```shell
 {"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU5MjUyNjY0MywianRpIjoiNTliOTJjMDdiNDNlNDZlMDk5YjY1ZjhjOWEyMWI1MGMiLCJ1c2VyX2lkIjoxfQ.IkXnAMgIXENQac8t87hAJpzS_nGYdtwDBr04UG8ErwE","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkxMzE3MzQzLCJqdGkiOiIyZGU5YjE1NWRjZGI0YzU5YWRmZTVkZmM2Y2FjNWMxYSIsInVzZXJfaWQiOjF9.a3ii2l7QgJhDD0527hA5nxDV9EtmbNWcYU8ijDh7wFk"}

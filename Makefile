@@ -34,6 +34,7 @@ check:
 	# aws-cli/1.18.35 Python/3.7.7 Linux/5.4.0-33-generic botocore/1.15.35
 	@echo $$(aws --version)
 
+# Use the custom fork, for styling purposes.
 setup:
 	docker build \
 		--file $(GIT_REPO_ROOT)/Dockerfile \
@@ -44,7 +45,7 @@ setup:
 		--net=host \
 		-u $(USERID):$(GROUPID) \
 		$(DOCKER_IMAGE_NAME):$(APP_VERSION) \
-		git clone https://github.com/bep/docuapi /app/themes/docuapi || true
+		git clone https://github.com/tinydevcrm/docuapi /app/themes/docuapi || true
 	docker run \
 		-v $(GIT_REPO_ROOT):/app \
 		--net=host \

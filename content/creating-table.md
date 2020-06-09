@@ -28,7 +28,7 @@ curl \
 > Note that TinyDevCRM preserves case sensitivity of column names and column
 > values. Also note that the column names must be ordered, and match the names
 > of the CSV headers exactly.
-
+>
 > This HTTP request would be translated to the following SQL:
 
 ```sql
@@ -42,4 +42,11 @@ CREATE FOREIGN TABLE "temp" (
 ) SERVER parquet_server OPTIONS (filename '/path/to/file.parquet');
 CREATE TABLE "sample_table" AS TABLE "temp" WITH DATA;
 DROP FOREIGN TABLE "temp";
+```
+
+> A successful request should return an `HTTP 201 Created` response, with the
+> following data:
+
+```bash
+{"id":$TABLE_ID,"table_name":"sample_table","user":$USER_ID}
 ```

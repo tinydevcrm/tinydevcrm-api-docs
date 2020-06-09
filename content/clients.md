@@ -1,12 +1,13 @@
 ---
 title: "Clients"
-weight: 11
+weight: 26
 ---
 
-# Creating Event-Driven Clients
+# Create Your Own!
 
-The special thing about TinyDevCRM is how any app built on top of it isn't
-special. All tiny automation-first apps can be built from these fundamentals.
+I hope you've found this tutorial and documentation useful. The special thing
+about TinyDevCRM is how any app built on top of it isn't special. All tiny
+automation-driven apps can be built from these basic fundamentals.
 
 __________
 
@@ -43,7 +44,7 @@ visible.
 Your data model may look something like this:
 
 First Name | Last Name | Process Notes | GitHub PR | Priority Item? | Compensation | Paid?
----------- | ---------- | ---------- | ---------- | ---------- | ----------
+---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
 Debbie | Gonzalez | `.gitattributes` for tabs/spaces | #45 | NO | $20 | NO
 Jacob | Richards | linting over landing page repo | #67 | NO | $20 | NO
 Michele | Wilkerson | improving test coverage to 80% | #34 | NO | $20 | NO
@@ -82,11 +83,14 @@ your data in its own special format, or crash and lose your data entirely.
 For certain classes of these life management applications, you may want
 stability, transparency, and utility, over the latest and greatest.
 
-In my experience, clients (CLIs, GUIs, SDKs) are cheap (hours to get up and
-running). Even APIs are fairly cheap (days to weeks). But enterprise-grade data
-management is very expensive (months). Expensive in messing up, expensive in
-understanding, and expensive in making useful.
+In my experience, developing clients (CLIs, GUIs, SDKs) is pretty easy, and it
+takes a few hours to get them up and running. Even developing APIs is fairly
+straightforward, on the order of days to weeks. But developing and maintaining
+enterprise-grade data management solutions is very expensive, on the order of
+months. It's expensive not just in pure hosting costs, but also in migrations,
+backups, logging, and analytics. That time sink is what kills small projects and
+prevents small bits of useful work from being done.
 
 So I built TinyDevCRM to amortize the cost of hosting your own data, so that you
 can build and ship side projects that stay with you and improve your life. I
-hope I (and you!) find it useful :)
+hope you find this useful!

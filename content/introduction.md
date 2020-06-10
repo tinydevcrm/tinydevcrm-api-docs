@@ -13,13 +13,15 @@ takes a few hours to get them up and running. Even developing APIs is fairly
 straightforward, on the order of days to weeks. But developing and maintaining
 enterprise-grade data management solutions is very expensive, on the order of
 months. It's expensive not just in pure hosting costs, but also in the
-operational overhead of migrations, backups, logging, and analytics. Those time
-sinks is what kills small projects and prevents small bits of useful work from
-being shipped and positively impacting people.
+operational overhead of migrations, backups, failover / replication / high
+availability, logging, and analytics. Those time sinks are what kill small
+projects, and prevent small bits of useful work from being routinely shipped and
+positively impacting people.
 
 So I built TinyDevCRM to amortize the cost of managing, hosting, and
-understanding your own data, so that you can build and ship event-driven side
-projects that stick with you and improve your life. I hope you find this useful!
+understanding your own data, so that you can focus on building and shipping
+event-driven side projects that stick with you and improve your life. I hope you
+find this project useful!
 
 __________
 

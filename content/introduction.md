@@ -8,6 +8,21 @@ title: API Reference
 Welcome to the TinyDevCRM API! TinyDevCRM serves as your data layer for
 lightweight, event-driven clients.
 
+In my experience, developing clients (CLIs, GUIs, SDKs) is pretty easy, and it
+takes a few hours to get them up and running. Even developing APIs is fairly
+straightforward, on the order of days to weeks. But developing and maintaining
+enterprise-grade data management solutions is very expensive, on the order of
+months. It's expensive not just in pure hosting costs, but also in the
+operational overhead of migrations, backups, logging, and analytics. Those time
+sinks is what kills small projects and prevents small bits of useful work from
+being shipped and positively impacting people.
+
+So I built TinyDevCRM to amortize the cost of managing, hosting, and
+understanding your own data, so that you can build and ship event-driven side
+projects that stick with you and improve your life. I hope you find this useful!
+
+__________
+
 Since this API is defined using HTTP, no SDK is necessary! Your favorite
 language's HTTP library should be able to communicate with this API, no problem.
 You can view code examples in the dark area to the right, and you can switch the

@@ -72,25 +72,12 @@ passwords + sign out of all devices, so that any password leaks don't compromise
 your account. If you have thousands of passwords, this would be impossible to do
 by hand.
 
-__________
-
 You could pay for solutions to all these. But managed solutions release jarring
 UI/UX changes (because only shipping new product makes money), might not be
 compatible with your device or devices, and become more and more expensive the
 more apps you purchase. Worst of all, they might lock down your data, export
-your data in its own special format, or crash and lose your data entirely.
-
-For certain classes of these life management applications, you may want
-stability, transparency, and utility, over the latest and greatest.
-
-In my experience, developing clients (CLIs, GUIs, SDKs) is pretty easy, and it
-takes a few hours to get them up and running. Even developing APIs is fairly
-straightforward, on the order of days to weeks. But developing and maintaining
-enterprise-grade data management solutions is very expensive, on the order of
-months. It's expensive not just in pure hosting costs, but also in migrations,
-backups, logging, and analytics. That time sink is what kills small projects and
-prevents small bits of useful work from being done.
-
-So I built TinyDevCRM to amortize the cost of hosting your own data, so that you
-can build and ship side projects that stay with you and improve your life. I
-hope you find this useful!
+your data in its own special format, or crash and lose your data entirely. For
+certain classes of these life management applications, you may want stability,
+transparency, and utility, over the latest and greatest. That's why data forms
+the least common denominator for all these apps, and why you might want to
+separate out the data layer from the rest of your stack.
